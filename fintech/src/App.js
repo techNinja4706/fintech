@@ -6,7 +6,7 @@ function App() {
   const send = async () => {
     const result = await axios({
       method: 'GET',
-      url: 'https://fintech-p7f7.onrender.com'
+      url: 'https://fintech-p7f7.onrender.com/user'
       // url: 'https://fintech-p7f7.onrender.com'
       // url: 'http://localhost:3000/user'
     })

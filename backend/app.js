@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
 });
 
 app.use((req, res, next) => {
-    console.log("req", req)
+    console.log("req", req.headers)
     next()
 })
 // route
