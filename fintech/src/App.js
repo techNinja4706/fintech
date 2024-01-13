@@ -1,12 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import axios from "axios"
-
 function App() {
+  // console.log("testing url", process.env.REACT_APP_URL)
   const send = async () => {
     const result = await axios({
       method: 'GET',
-      url: 'http://localhost:3000/user'
+      url: 'https://fintech-p7f7.onrender.com'
+      // url: 'https://fintech-p7f7.onrender.com'
+      // url: 'http://localhost:3000/user'
     })
 
     console.log("Result", result)
