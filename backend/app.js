@@ -21,9 +21,10 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
     console.log(err);
 });
 
+console.log("req", req)
 // route
 
 
-app.get("https://fintech-p7f7.onrender.com/user", (req, res) => {
+app.get("/user", (req, res) => {
     res.status(201).send({message: "Connected to user!"});
 });
