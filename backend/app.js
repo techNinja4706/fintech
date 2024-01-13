@@ -40,5 +40,5 @@ app.get("*", (req, res) => {
     console.log(__dirname, '../')
     console.log(__dirname, '../../')
     console.log(path.join(__dirname, "../fintech//build/robots.txt"))
-    res.sendFile(path.join(__dirname, "../fintech/build/robots.txt"));
+    res.sendFile(path.join(__dirname, "../fintech/public/index.html"));
 });
