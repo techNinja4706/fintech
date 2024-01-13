@@ -21,7 +21,10 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
     console.log(err);
 });
 
-console.log("req", req)
+app.use((req, res, next) => {
+    console.log("req", req)
+    next()
+})
 // route
 
 
