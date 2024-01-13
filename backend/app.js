@@ -18,9 +18,9 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
 });
 
 // app.use(express.static(path.join(__dirname, "../fintech/build")));
-app.use(express.static(path.join(__dirname, "../fintech/public")));
+app.use(express.static(path.join(__dirname, "../fintech/build")));
 
 
 app.use("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../fintech/public/rootFile.js"));
+    res.sendFile(path.join(__dirname, "../fintech/build/index.html"));
 });
