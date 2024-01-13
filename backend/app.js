@@ -25,6 +25,6 @@ app.get("/user", (req, res) => {
 
 console.log("path", path.join(__dirname, "../../fintech/build/index.html"))
 
-app.get("*", (req, res) => {
+app.use("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../fintech/build/index.html"));
 });
