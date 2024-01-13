@@ -40,5 +40,5 @@ app.get("*", (req, res) => {
     console.log(__dirname, '../')
     console.log(__dirname, '../../')
     console.log(path.join(__dirname, "../fintech/reacttest.js"))
-    res.sendFile(path.join(__dirname, "../fintech/build/index.html"));
+    res.sendFile(path.join(__dirname, "../fintech/build/logo512.png"));
 });
