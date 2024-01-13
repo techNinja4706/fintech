@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
     console.log(err);
 });
 
-app.use(express.static(path.join(__dirname, "../fintech/build")));
+app.use(express.static(path.join(__dirname, "../fintech/public")));
 // app.use((req, res, next) => {
 //     console.log("req", req.headers)
 //     next()
