@@ -33,8 +33,8 @@ app.get("/user", (req, res) => {
     res.status(201).send({ message: "Connected to user!" });
 });
 
-console.log("path", path.join(__dirname, "../fintech/build", "index.html"))
+console.log("path", path.join(__dirname, "../../fintech/build", "index.html"))
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "./fintech/build", "index.html"));
+    res.sendFile(path.join(__dirname, "../fintech/build", "index.html"));
 });
