@@ -22,9 +22,7 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
 });
 
 // route
-app.get("https://fintech-p7f7.onrender.com/", (req, res) => {
-    res.status(201).json({message: "Connected to Backend!"});
-});
+
 
 app.get("https://fintech-p7f7.onrender.com/user", (req, res) => {
     res.status(201).send({message: "Connected to user!"});
