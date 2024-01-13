@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const cors = require("cors");
+const path = require("path");
 require("dotenv").config();
 
 // middleware
@@ -31,3 +32,7 @@ app.use((req, res, next) => {
 app.get("/user", (req, res) => {
     res.status(201).send({message: "Connected to user!"});
 });
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "./fintech/build", "index.html"));
+  });
