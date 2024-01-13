@@ -6,7 +6,7 @@ require("dotenv").config();
 
 // middleware
 const corsOptions = {
-    origin: "http://localhost:3000" // frontend URI (ReactJS)
+    origin: "https://fintech-react.onrender.com/"
 }
 app.use(express.json());
 app.use(cors());
@@ -22,10 +22,10 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
 });
 
 // route
-app.get("/", (req, res) => {
+app.get("https://fintech-p7f7.onrender.com/", (req, res) => {
     res.status(201).json({message: "Connected to Backend!"});
 });
 
-app.get("/user", (req, res) => {
+app.get("https://fintech-p7f7.onrender.com/user", (req, res) => {
     res.status(201).send({message: "Connected to user!"});
 });
