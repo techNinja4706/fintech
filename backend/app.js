@@ -11,7 +11,6 @@ const corsOptions = {
 }
 app.use(express.json());
 app.use(cors());
-
 // connect MongoDB
 mongoose.connect(process.env.MONGODB_URI).then(() => {
     const PORT = process.env.PORT || 8000
@@ -22,19 +21,20 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
     console.log(err);
 });
 
-app.use((req, res, next) => {
-    console.log("req", req.headers)
-    next()
-})
+app.use(express.static(path.join(__dirname, "../fintech/build")));
+// app.use((req, res, next) => {
+//     console.log("req", req.headers)
+//     next()
+// })
 // route
 
 
 app.get("/user", (req, res) => {
-    res.status(201).send({message: "Connected to user!"});
+    res.status(201).send({ message: "Connected to user!" });
 });
 
 console.log("path", path.join(__dirname, "../fintech/build", "index.html"))
 
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "./fintech/build", "index.html"));
-  });
+});
